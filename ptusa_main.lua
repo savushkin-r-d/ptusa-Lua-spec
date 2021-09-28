@@ -1,13 +1,3 @@
-package.path = package.path..
-    ";p:/PTUSA-projects/editor/lua/busted/?.lua"..
-    ";p:/PTUSA-projects/editor/lua/5.1/lua/?/init/init.lua"..
-    ";p:/PTUSA-projects/editor/lua/5.1/lua/?/init.lua"..
-    ";p:/PTUSA-projects/editor/lua/5.1/lua/?.lua"
-
-package.cpath = package.cpath ..
-    ";p:/PTUSA-projects/editor/lua/5.1/clibs/?.dll"..
-    ";./bin/lib/?.dll"
-
 require 'busted.runner'()
 
 expose("ptusa", function()
