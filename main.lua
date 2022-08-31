@@ -42,9 +42,8 @@ expose("ptusa", function()
                 obj:set_mode( i, 1 )
                 assert.are.equal( ptusa.eval(), 0 )
                 local m_mngr = obj:get_modes_manager()
-                local oper   = m_mngr[ i ]
+                local oper = m_mngr[ i ]
                 local count_steps = oper[ operation.RUN ]:steps_count()
-                local step = oper:active_step()
                 for j = 1, count_steps do
                     print( "\t"..j )
                     oper:to_step( j )
