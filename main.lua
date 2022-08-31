@@ -47,6 +47,7 @@ expose("ptusa", function()
                 for j = 1, count_steps do
                     print( "\t"..j )
                     oper:to_step( j )
+                    assert.are.equal( ptusa.eval(), 0 )
                 end
                 obj:set_mode( i, 0 )
                 assert.are.equal( ptusa.eval(), 0 )
