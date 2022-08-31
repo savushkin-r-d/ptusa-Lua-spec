@@ -46,8 +46,8 @@ expose("ptusa", function()
                 local count_steps = oper[ operation.RUN ]:steps_count()
                 local step = oper:active_step()
                 for j = 1, count_steps do
-                    oper:to_step( j )
                     print( "\t"..j )
+                    oper:to_step( j )
                 end
                 obj:set_mode( i, 0 )
                 assert.are.equal( ptusa.eval(), 0 )
