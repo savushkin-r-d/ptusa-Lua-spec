@@ -43,4 +43,30 @@ expose("ptusa", function()
             end
         end
     end)
+
+    it("objects number and type", function()
+        if OBJECTS then
+            for idx, obj in pairs(OBJECTS) do
+                print( idx, obj.name, obj.n, "("..obj.tech_type..")" )
+            end
+
+            local err_str = ""
+            for _, obj in pairs(OBJECTS) do
+                local n = obj.n
+                local tech_type = obj.tech_type
+
+                for _, obj2 in pairs(OBJECTS) do
+                    if obj ~= obj2 then
+                        if n == obj2.n and tech_type == obj2.tech_type then
+                            err_str = err_str.."\n    '"..obj2.name..
+                                "' has the same number ("..n..") and type ("..tech_type..
+                                ") as '"..obj.name.."'."
+                        end
+                    end
+                end
+            end
+
+            if err_str ~= "" then error( "Not correct objects description:"..err_str ) end
+        end
+    end)
 end)
