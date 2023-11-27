@@ -72,17 +72,19 @@ expose("ptusa", function()
 
     it("check same names", function()
         if OBJECTS then
+            local err_str = ""
             for _, idx in pairs( OBJECTS ) do
                 for i = 1, #idx.NAME_PARAMS do
                     for j = 1, i - 1 do
                         if idx.NAME_PARAMS[ i ] ~= 'P' and idx.NAME_PARAMS[ j ] ~= 'P' then
                             if idx.NAME_PARAMS[ i ] == idx.NAME_PARAMS[ j ] then
-                                print( idx.name..' '..idx.n..' '..idx.NAME_PARAMS[ i ]..' has some same names Lua' )
+                                err_str = idx.name..' '..idx.n..' '..idx.NAME_PARAMS[ i ]..' has some same names Lua'
                             end
                         end
                     end
                 end
             end
+            if err_str ~= "" then error( err_str ) end
         end
     end)
 end)
