@@ -14,9 +14,10 @@ expose("ptusa", function()
 
     it("init", function()
         local res = ptusa.init(
+	        "main (Lua)",
             main_script or "main.plua",
-            "path", path or "",
-            "sys_path", sys_path or "./sys/" )
+            "--path", path or "",
+            "--sys_path", sys_path or "./sys/" )
 
         assert.are.equal(res, 0)
     end)
