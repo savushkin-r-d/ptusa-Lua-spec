@@ -28,7 +28,13 @@ expose("ptusa", function()
 
     it("objects operations", function()
         if OBJECTS then
-            init()
+            for idx, obj in pairs(OBJECTS) do
+                if obj.user_init then obj:user_init() end
+                if obj.init then obj:init() end
+                if user_init then user_init() end
+                if obj.post_init then obj:post_init() end
+            end
+
             for idx, obj in pairs(OBJECTS) do
                 local name = obj.name
                 print( idx, name, obj.n )
